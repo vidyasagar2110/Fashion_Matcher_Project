@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Male Clothing Matcher</title>
+</head>
+<body>
+    <h1>Male Clothing Matcher</h1>
+
+    <form id="male-form" method="POST">
+        {% csrf_token %}
+        <label for="top_url">Top Clothing URL:</label>
+        <input type="text" id="top_url" name="top_url" required><br><br>
+
+        <label for="bottom_url">Bottom Clothing URL:</label>
+        <input type="text" id="bottom_url" name="bottom_url" required><br><br>
+
+        <label for="model">Select Model:</label>
+        <select id="model" name="model" required>
+            <option value="model1">Model 1</option>
+            <option value="model2">Model 2</option>
+            <option value="model3">Model 3</option>
+        </select><br><br>
+
+        <button type="submit">Generate</button>
+    </form>
+
+    <div id="output"></div>
+
+    <h2>Upload Clothing Image</h2>
+    <form id="image-upload-form" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
+        <button type="submit">Generate Description</button>
+    </form>
+
+    <div id="description-output"></div>
+</body>
+</html>

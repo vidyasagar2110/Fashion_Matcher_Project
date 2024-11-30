@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Matcher</title>
+    <style>
+        /* General page styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #000 300px, #f7f7f7 300px);
+        }
+
+        /* Logo styling */
+        .logo-container {
+            text-align: center;
+            padding-top: 50px;
+            background-color: #000;
+            width: 100%;
+        }
+        .logo-container img {
+            width: 150px;
+            height: auto;
+        }
+
+        /* Welcome message styling */
+        h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        /* Button styling */
+        .button-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 100px; /* Increased margin to move buttons down */
+        }
+        .button-container a {
+            text-decoration: none;
+        }
+        .button-container button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #4CAF50;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button-container button:hover {
+            background-color: #45a049;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Logo at the top with black background -->
+    <div class="logo-container">
+        <img src="{% static 'clothing/clothing_logo.jpg' %}" alt="Logo">
+    </div>
+
+    <!-- Welcome message -->
+    <h1>Welcome to Fashion Matcher</h1>
+
+    <!-- Buttons for Male and Female -->
+    <div class="button-container">
+        <a href="{% url 'male' %}">
+            <button>Male</button>
+        </a>
+        <a href="{% url 'female' %}">
+            <button>Female</button>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2024 Fashion Matcher. All rights reserved.
+    </footer>
+
+</body>
+</html>
